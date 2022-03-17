@@ -1,14 +1,14 @@
 import sys
 from collections import deque
 
-def dfs(n):
+def dfs(graph,n,visited):
     visited[n]=True
     print(n,end=' ')
     for i in graph[n]:
         if not visited[i]:
-            dfs(i)
+            dfs(graph,i,visited)
 
-def bfs(n): 
+def bfs(graph,n,visited): 
     queue=deque([n]) #큐 생성
     visited[n]=True #첫번째 노드 방문처리
     while queue:
@@ -30,7 +30,7 @@ for i in range(N+1):
 
 
 visited=[False]*(N+1)
-dfs(V)
+dfs(graph,V,visited)
 print()
 visited=[False]*(N+1)
-bfs(V)
+bfs(graph,V,visited)
