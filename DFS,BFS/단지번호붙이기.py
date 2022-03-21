@@ -5,7 +5,7 @@ for _ in range(n):
 
 grp=[]
 cnt=0
-dx=[-1,1,0,0]
+dx=[-1,1,0,0] #상하좌우 
 dy=[0,0,-1,1]
 
 def dfs(x,y):
@@ -22,7 +22,7 @@ def dfs(x,y):
 
 for i in range(n): #graph를 돌면서
     for j in range(n): 
-        if dfs(i,j)==True: #다 돌고 True를 반환하면
+        if dfs(i,j)==True: #다 돌고 True를 반환하면 (방문처리가 되었으면)
             grp.append(cnt) #grp에 cnt를 추가
             cnt=0 #cnt 값 초기화
 
